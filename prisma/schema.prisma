@@ -7,32 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model features {
-  id         BigInt    @id @default(autoincrement())
-  created_at DateTime? @default(now()) @db.Timestamptz(6)
-  name       String?
-  activate   Boolean?
-}
-
-model games {
-  id          BigInt  @id @default(autoincrement())
-  name        String  @default("GameName") @db.VarChar
-  logo        String
-  preview     String
-  iOSLink     String? @db.VarChar
-  androidLink String? @db.VarChar
-  webLink     String? @db.VarChar
-  web         Boolean @default(false)
-}
-
-/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
-model skills {
-  id         BigInt    @id @default(autoincrement())
-  created_at DateTime? @default(now()) @db.Timestamptz(6)
-  title      String?
-  skill      Json?     @db.Json
-}
-
 model myskills {
   id     String  @id @default(uuid())
   title  String
