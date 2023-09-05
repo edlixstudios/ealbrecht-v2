@@ -1,0 +1,50 @@
+export default {
+    title: "Hey I'm Eddy",
+    desc: "I'm a software engineer and I'm passionate about the web. My motto is you want it, you get it!",
+    funnel: {
+        title: "Hey, I am ",
+        name: "Eddy",
+        desc: "and I am a Fullstack Software Engineer",
+        button: "More about me",
+    },
+    navbar: {
+        profile: "Profile",
+        projects: "Projects",
+    },
+    about: {
+        title: "# About me",
+        desc1: "Hey I am Eddy a Fullstack Software Engineer with a passion for Web Development",
+        desc2: "I started my passion for software development at the age of 16 when I created my first small video games with Game Maker 8.1. I had so much fun developing and realizing ideas that I focused on Unity and the programming language C#.",
+        desc3: "In 2016 I noticed how powerful web technologies are today, so I decided to further educate myself in web technologies. After I had acquired skills in HTML, CSS and Javascript or Typescript, I started creating my first projects with frameworks.",
+        desc4: "I chose React, which was already very popular at the time. I quickly realized that frontend technologies alone are not enough for a full-fledged web app, which is why I decided to develop backend code with NodeJS.",
+        desc5: "By the way, I created this page with NextJS, Tailwind, Typescript, PostgresSQL and ❤️.",
+    },
+    skills: {
+        title: "Skills",
+        unity: "Unity",
+        frontend: "Frontend",
+        backend: "Backend",
+        mobile: "Mobile Development",
+        database: "Database",
+        programmingLanguages: "Programming Languages",
+        devOps: "Dev Ops",
+        projectManagement: "Project Management",
+        languages: "Languages",
+    },
+    contact: {
+        title: "<Contact />",
+        desc: "Do you want to get in touch with me? Write me an email or contact me on LinkedIn.",
+        form: {
+            name: "Name",
+            email: "E-Mail",
+            message: "Message",
+            submit: "Send mail",
+            success: "Your message was sent successfully",
+            error: "Your message could not be sent",
+        },
+    },
+    footer: {
+        title: "Social Media",
+        createdBy: "Created by Eduard Albrecht {date}",
+    },
+} as const;
