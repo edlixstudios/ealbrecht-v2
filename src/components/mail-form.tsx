@@ -20,34 +20,35 @@ export default function MailForm() {
         name: "",
         message: "",
     });
+
+    const [isPending, setTransition] = useTransition();
+
     const { toast } = useToast();
-    const [isSending, setIsSending] = useState(false);
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        setIsSending(true);
 
-        const res = await fetch("/api/mail", {
-            method: "POST",
-            body: JSON.stringify(emailForm),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-
-        if (res.status === 200) {
-            setEmailForm({
-                email: "",
-                name: "",
-                message: "",
+        await setTransition(async () => {
+            const res = await fetch("/api/mail", {
+                method: "POST",
+                body: JSON.stringify(emailForm),
+                headers: {
+                    "Content-Type": "application/json",
+                },
             });
 
-            toast({ title: t("contact.form.success"), variant: "success" });
-        } else {
-            toast({ title: t("contact.form.error"), variant: "destructive" });
-        }
+            if (res.status === 200) {
+                setEmailForm({
+                    email: "",
+                    name: "",
+                    message: "",
+                });
 
-        setIsSending(false);
+                toast({ title: t("contact.form.success"), variant: "success" });
+            } else {
+                toast({ title: t("contact.form.error"), variant: "destructive" });
+            }
+        });
     }
 
     return (
@@ -79,7 +80,7 @@ export default function MailForm() {
             />
             <Button>
                 {t("contact.form.submit")}
-                {isSending ? <Loader2 className={"animate-spin ml-4"} /> : null}
+                {isPending ? <Loader2 className={"animate-spin ml-4"} /> : null}
             </Button>
         </form>
     );
