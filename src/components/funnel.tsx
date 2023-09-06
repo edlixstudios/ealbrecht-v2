@@ -15,7 +15,7 @@ export default function Funnel() {
                 <motion.h2
                     initial={{ x: -200, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 2 }}
+                    transition={{ duration: 1 }}
                     className="text-4xl text-center md:text-6xl xl:text-start "
                 >
                     {t("funnel.title")}
@@ -26,13 +26,13 @@ export default function Funnel() {
                 <motion.h3
                     initial={{ x: -300, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 2, duration: 2 }}
+                    transition={{ delay: 1, duration: 1 }}
                     className=" text-center md:text-2xl xl:text-4xl xl:text-start mt-4"
                 >
                     {t("funnel.desc")}
                 </motion.h3>
                 <motion.div
-                    transition={{ delay: 3, duration: 2 }}
+                    transition={{ delay: 2, duration: 1 }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     className="mt-4 flex justify-center xl:justify-start"

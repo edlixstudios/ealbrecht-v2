@@ -17,7 +17,7 @@ export default {
         desc1: "Hey, ich bin Eddy und ich bin ein Fullstack Software Ingenieur mit einer Passion zu Webtechnologien.",
         desc2: "Meine Begeisterung für die Softwareentwicklung begann im Alter von 16 Jahren als ich meine ersten kleinen Videospiele mit Game Maker 8.1 erstellt habe. Ich hatte so viel Spaß bei der Entwicklung und dem realisieren von Ideen, dass ich mich auf Unity und die Programmiersprache C# konzentriert habe.",
         desc3: "Im Jahr 2016 ist mir aufgefallen wie mächtig die Webtechnologien zur heutigen Zeit sind, also habe ich mich dazu entschieden, mich in Webtechnologien weiterzubilden. Nachdem ich mir Fähigkeiten in HTML, CSS und Javascript bzw. Typescript angeeignet hatte, begann ich meine ersten Projekte mit Frameworks zu erstellen.",
-        desc4: "Dabei fiel meine Wahl auf schon damals sehr beliebte Frameworks React. Recht schnell habe ich bemerkt, dass für eine vollwertige Webapp Frontend Technologien alleine nicht ausreichend sind, weshalb ich mich entschlossen habe Backendcode mit NodeJS zu entwickeln.",
+        desc4: "Dabei fiel meine Wahl auf das schon damals sehr beliebte Frameworks React. Recht schnell habe ich bemerkt, dass für eine vollwertige Webapp Frontend Technologien alleine nicht ausreichend sind, weshalb ich mich entschlossen habe Backendcode mit NodeJS zu entwickeln.",
         desc5: "Ach übrigens, ich habe diese Seite mit NextJS, Tailwind, Typescript, PostgresSQL und ❤️ erstellt.",
     },
     skills: {
