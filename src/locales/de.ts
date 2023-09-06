@@ -1,6 +1,7 @@
 export default {
     title: "Hey ich bin Eddy",
     desc: "Ich bin ein Fullstack Software Ingenieur mit einer Passion zu Webtechnologien. Meine Devise ist Du willst es, du kriegst es!",
+    pickLang: "Sprache wählen",
     funnel: {
         title: "Hey, ich bin ",
         name: "Eddy",

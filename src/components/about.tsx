@@ -18,11 +18,11 @@ export default async function About() {
                         src={"/me.jpg"}
                         alt={"Eduard Albrecht"}
                         width={500}
-                        height={100}
+                        height={500}
                         loading="lazy"
                         placeholder={"blur"}
                         blurDataURL={"/me.jpg"}
-                        className={"rounded-md m-auto"}
+                        className={"rounded-md m-auto aspect-auto"}
                     />
                     <div className="flex flex-col justify-between text-2xl gap-4 text-justify">
                         <p>{t("about.desc1")}</p>
