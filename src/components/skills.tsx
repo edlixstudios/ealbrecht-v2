@@ -7,13 +7,17 @@ import { twMerge } from "tailwind-merge";
 import { Skilltree } from "./skilltree";
 
 async function loadSkills() {
-    const allSkills = await prisma.myskills.findMany({
-        include: {
-            skills: true,
-        },
-    });
+    try {
+        const allSkills = await prisma.myskills.findMany({
+            include: {
+                skills: true,
+            },
+        });
 
-    return allSkills;
+        return allSkills;
+    } catch (e) {
+        return [];
+    }
 }
 
 export default async function About() {
