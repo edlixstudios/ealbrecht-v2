@@ -5,5 +5,8 @@
         "Skilltree",
         "tailwind",
         "utilities"
+    ],
+    "i18n-ally.localesPaths": [
+        "src/locales"
     ]
 }

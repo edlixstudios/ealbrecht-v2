@@ -5,19 +5,34 @@ import { gradient } from "$/util/gradient";
 import ContentContainer from "./content-container";
 import { twMerge } from "tailwind-merge";
 import { Skilltree } from "./skilltree";
+import {
+    automationSkills,
+    backendSkills,
+    databaseSkills,
+    devOpsSkills,
+    frontendSkills,
+    languagesSkills,
+    mobileDevelopmentSkills,
+    programmingLanguagesSkill,
+    projectManagementSkills,
+    testingSkills,
+    unitySkills,
+} from "$/util/skillts";
 
-async function loadSkills() {
-    try {
-        const allSkills = await prisma.myskills.findMany({
-            include: {
-                skills: true,
-            },
-        });
-
-        return allSkills;
-    } catch (e) {
-        return [];
-    }
+function loadSkills(): Skilltree[] {
+    return [
+        frontendSkills,
+        backendSkills,
+        mobileDevelopmentSkills,
+        databaseSkills,
+        programmingLanguagesSkill,
+        devOpsSkills,
+        projectManagementSkills,
+        testingSkills,
+        unitySkills,
+        automationSkills,
+        languagesSkills,
+    ];
 }
 
 export default async function About() {
@@ -40,7 +55,7 @@ export default async function About() {
             </div>
             <div className={"grid xl:grid-cols-3 my-16 gap-8"}>
                 {skills.map((skill) => (
-                    <Skilltree key={skill.id} skill={skill} />
+                    <Skilltree key={skill.skillCategory} skill={skill} />
                 ))}
             </div>
         </ContentContainer>
