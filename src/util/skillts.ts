@@ -142,6 +142,10 @@ export const devOpsSkills: Skilltree = {
     skillCategory: "Dev Ops",
     skills: [
         {
+            name: "git",
+            value: 95,
+        },
+        {
             name: "Docker / Docker Compose",
             value: 100,
         },
