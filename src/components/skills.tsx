@@ -1,4 +1,3 @@
-import { prisma } from "$/lib/prisma";
 import { getI18n } from "$/locales/server";
 import { gradient } from "$/util/gradient";
 
