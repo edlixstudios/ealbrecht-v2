@@ -113,11 +113,11 @@ export const databaseSkills: Skilltree = {
 };
 
 export const programmingLanguagesSkill: Skilltree = {
-    skillCategory: "Programming Languages",
+    skillCategory: "Programming",
     skills: [
         {
-            name: "Typescript",
-            value: 95,
+            name: "Typescript / Javacsript",
+            value: 100,
         },
         {
             name: "C#",
@@ -161,7 +161,7 @@ export const devOpsSkills: Skilltree = {
 };
 
 export const projectManagementSkills: Skilltree = {
-    skillCategory: "Project Management Tools / Techniques",
+    skillCategory: "Project Management",
     skills: [
         {
             name: "Jira",
