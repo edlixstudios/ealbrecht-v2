@@ -179,15 +179,11 @@ export const projectManagementSkills: Skilltree = {
             name: "Notion",
             value: 90,
         },
-        {
-            name: "Ganzz",
-            value: 80,
-        },
     ],
 };
 
 export const testingSkills: Skilltree = {
-    skillCategory: "Testing",
+    skillCategory: "Unit + E2E Testing",
     skills: [
         {
             name: "Playwright",
