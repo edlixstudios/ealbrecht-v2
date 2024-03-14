@@ -72,12 +72,12 @@ export const mobileDevelopmentSkills: Skilltree = {
     skillCategory: "Mobile Development",
     skills: [
         {
-            name: "React Native / Expo",
-            value: 90,
-        },
-        {
             name: "Ionic",
             value: 95,
+        },
+        {
+            name: "React Native / Expo",
+            value: 90,
         },
         {
             name: "Flutter",
