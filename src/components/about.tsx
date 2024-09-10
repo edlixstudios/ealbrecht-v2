@@ -33,7 +33,9 @@ export default async function About() {
           </div>
         </div>
       </ContentContainer>
-      <div className={`bg-white h-16 w-full relative -bottom-4 -skew-y-1`} />
+      <div
+        className={`bg-white h-16 w-full relative top-4 -skew-y-1 xl:top-8 2xl:top-12`}
+      />
     </section>
   );
 }
