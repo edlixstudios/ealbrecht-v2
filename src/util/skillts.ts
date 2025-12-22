@@ -1,4 +1,4 @@
-import { Skilltree } from "$/components/skilltree";
+import type { Skilltree } from "$/components/skilltree";
 
 export const frontendSkills: Skilltree = {
     skillCategory: "Frontend",

@@ -1,4 +1,4 @@
-import { EmailForm } from "$/components/mail-form";
+import type { EmailForm } from "$/components/mail-form";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
