@@ -4,6 +4,7 @@ import { ArrowUpToLine } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { FaGithubSquare, FaLinkedin, FaXingSquare } from "react-icons/fa";
+import { MeondiIcon } from "$/components/icon/meondi-icon";
 import { useScroll } from "$/hooks/useScroll";
 import ContentContainer from "./content-container";
 import { Button } from "./ui/button";
@@ -55,6 +56,12 @@ export const Footer = () => {
 							href={"https://github.com/edlixstudios"}
 						>
 							<FaGithubSquare className={"w-full h-full"} />
+						</Link>
+						<Link
+							className={"transition-all hover:text-cyan-500 hover:scale-105"}
+							href={"https://meondi.com"}
+						>
+							<MeondiIcon />
 						</Link>
 					</div>
 					<div className="mt-4">
