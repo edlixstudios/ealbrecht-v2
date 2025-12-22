@@ -1,43 +1,47 @@
 import Footer from "$/components/footer";
 import Header from "$/components/header";
-import { getI18n } from "$/locales/server";
-import I18NProvider from "$/provider/i18n-provider";
 import "../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Toaster } from "$/components/ui/toaster";
+import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { ReactNode } from "react";
+import { Toaster } from "$/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const generateMetadata = async (): Promise<Metadata> => {
-    const t = await getI18n();
+	const t = await getTranslations();
 
-    return {
-        title: t("title"),
-        description: t("desc"),
-    };
+	return {
+		title: t("title"),
+		description: t("desc"),
+	};
 };
 
-export default function RootLayout({
-    children,
-    params,
+export default async function RootLayout({
+	children,
+	params,
 }: {
-    children: React.ReactNode;
-    params: { locale: string };
+	children: ReactNode;
+	params: Promise<{ locale: string }>;
 }) {
-    return (
-        <html lang={params.locale}>
-            <head>
-                <link rel="icon" href="./icon.png" />
-            </head>
-            <body className={inter.className}>
-                <I18NProvider locale={params.locale}>
-                    <Header />
-                    {children}
-                    <Footer />
-                    <Toaster />
-                </I18NProvider>
-            </body>
-        </html>
-    );
+	const { locale } = await params;
+
+	return (
+		<html lang={locale}>
+			<head>
+				<title></title>
+				<link rel="icon" href="./icon.png" />
+			</head>
+			<body className={inter.className}>
+				<NextIntlClientProvider locale={locale}>
+					<Header />
+					{children}
+					<Footer />
+					<Toaster />
+				</NextIntlClientProvider>
+			</body>
+		</html>
+	);
 }
