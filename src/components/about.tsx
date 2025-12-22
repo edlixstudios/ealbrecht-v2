@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import fullbody from "$/assets/images/me_body_full.png";
+import { Lens } from "$/components/ui/lens";
 import { gradient } from "$/util/gradient";
 import ContentContainer from "./content-container";
 
-export const About = async () => {
-	const t = await getTranslations();
+export const About = () => {
+	const t = useTranslations();
+	const [hovering, setHovering] = useState(false);
 
 	return (
 		<section id="about" className={twMerge(gradient)}>
@@ -15,18 +20,20 @@ export const About = async () => {
 					{t("about.title")}
 				</h2>
 				<div className={"grid xl:grid-cols-2 gap-8 px-4 py-8 "}>
-					<Image
-						src={fullbody}
-						alt={"Eduard Albrecht"}
-						width={500}
-						height={500}
-						loading="lazy"
-						placeholder={"blur"}
-						blurDataURL={"/me.jpg"}
-						className={
-							"rounded-md m-auto aspect-auto bg-linear-to-t from-blue-300/50 to-transparent"
-						}
-					/>
+					<Lens hovering={hovering} setHovering={setHovering}>
+						<Image
+							src={fullbody}
+							alt={"Eduard Albrecht"}
+							width={500}
+							height={500}
+							loading="lazy"
+							placeholder={"blur"}
+							blurDataURL={"/me.jpg"}
+							className={
+								"rounded-md m-auto aspect-auto bg-linear-to-t from-blue-300/50 to-transparent"
+							}
+						/>
+					</Lens>
 
 					<div className="flex flex-col justify-between text-2xl gap-4 text-justify">
 						<p>{t("about.desc1")}</p>

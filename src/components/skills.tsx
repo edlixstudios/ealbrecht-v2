@@ -1,5 +1,7 @@
-import { getTranslations } from "next-intl/server";
-import { twMerge } from "tailwind-merge";
+"use client";
+import dynamic from "next/dynamic";
+import { useTranslations } from "next-intl";
+import { cn } from "$/lib/utils";
 import { gradient } from "$/util/gradient";
 import {
 	automationSkills,
@@ -17,6 +19,10 @@ import {
 import ContentContainer from "./content-container";
 import { Skilltree } from "./skilltree";
 
+const EncryptedText = dynamic(() => import("$/components/ui/encrypted-text"), {
+	ssr: false,
+});
+
 function loadSkills(): Skilltree[] {
 	return [
 		frontendSkills,
@@ -33,23 +39,24 @@ function loadSkills(): Skilltree[] {
 	];
 }
 
-export const Skills = async () => {
-	const t = await getTranslations();
+export const Skills = () => {
+	const t = useTranslations();
 	const skills = loadSkills();
+
+	const skillString = `{${t("skills.title")}}`;
 
 	return (
 		<ContentContainer>
 			<div className="w-full flex justify-center">
-				<h2
-					className={twMerge(
-						"text-center text-4xl md:text-6xl font-bold p-1 bg-clip-text text-transparent inline",
+				<EncryptedText
+					text={skillString}
+					encryptedClassName="text-neutral-500"
+					revealDelayMs={50}
+					className={cn(
+						"bg-clip-text text-transparent text-center text-4xl md:text-6xl font-bold p-1",
 						gradient,
 					)}
-				>
-					{"{"}
-					{t("skills.title")}
-					{"}"}
-				</h2>
+				/>
 			</div>
 			<div className={"grid xl:grid-cols-3 my-16 gap-8"}>
 				{skills.map((skill) => (

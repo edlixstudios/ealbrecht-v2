@@ -4,6 +4,7 @@ import { ChevronDownIcon } from "lucide-react";
 
 import { useTranslations } from "next-intl";
 import { Button } from "$/components/ui/button";
+import { FlipWords } from "$/components/ui/flip-words";
 import { useScroll } from "$/hooks/useScroll";
 import { cn } from "$/lib/utils";
 import { gradient } from "$/util/gradient";
@@ -12,6 +13,14 @@ import ContentContainer from "./content-container";
 export const Funnel = () => {
 	const t = useTranslations();
 	const { scrollTo } = useScroll();
+
+	const words = [
+		t("funnel.jobs.architect"),
+		t("funnel.jobs.fullstack"),
+		t("funnel.jobs.mobile"),
+		t("funnel.jobs.game"),
+	];
+
 	return (
 		<ContentContainer className="h-screen flex justify-center items-center">
 			<div id="top" className="font-bold flex flex-col xl:gap-4">
@@ -30,9 +39,11 @@ export const Funnel = () => {
 					initial={{ x: -300, opacity: 0 }}
 					animate={{ x: 0, opacity: 1 }}
 					transition={{ delay: 1, duration: 1 }}
-					className=" text-center md:text-2xl xl:text-4xl xl:text-start mt-4"
+					className="text-center md:text-2xl xl:text-4xl xl:text-start mt-4"
 				>
 					{t("funnel.desc")}
+
+					<FlipWords words={words} />
 				</motion.h3>
 				<motion.div
 					transition={{ delay: 2, duration: 1 }}
