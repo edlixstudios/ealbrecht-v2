@@ -24,7 +24,7 @@
 		"desc2": "I started my passion for software development at the age of 16 when I created my first small video games with Game Maker 8.1. I had so much fun developing and realizing ideas that I focused on Unity and the programming language C#.",
 		"desc3": "In 2016 I noticed how powerful web technologies are today, so I decided to further educate myself in web technologies. After I had acquired skills in HTML, CSS and Javascript or Typescript, I started creating my first projects with frameworks.",
 		"desc4": "I chose React, which was already very popular at the time. I quickly realized that frontend technologies alone are not enough for a full-fledged web app, which is why I decided to develop backend code with NodeJS.",
-		"desc5": "By the way, I created this page with NextJS, Tailwind, Typescript, PostgresSQL and ❤️."
+		"desc5": "By the way, I created this page with NextJS, Tailwind, Typescript and ❤️."
 	},
 	"skills": {
 		"title": "Skills",

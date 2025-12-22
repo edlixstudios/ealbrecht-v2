@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { ChevronDownIcon } from "lucide-react";
-
 import { useTranslations } from "next-intl";
 import { Button } from "$/components/ui/button";
 import { FlipWords } from "$/components/ui/flip-words";
@@ -52,12 +51,12 @@ export const Funnel = () => {
 					className="mt-4 flex justify-center xl:justify-start"
 				>
 					<Button
-						variant={"default"}
+						variant={"gradient"}
 						size={"lg"}
 						onClick={() => scrollTo("about")}
 					>
 						{t("funnel.button")}{" "}
-						<ChevronDownIcon className={"animate-bounce"} />
+						<ChevronDownIcon className={"animate-bounce size-5"} />
 					</Button>
 				</motion.div>
 			</div>
