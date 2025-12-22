@@ -33,7 +33,7 @@ function loadSkills(): Skilltree[] {
 	];
 }
 
-export default async function About() {
+export const Skills = async () => {
 	const t = await getTranslations();
 	const skills = loadSkills();
 
@@ -58,4 +58,4 @@ export default async function About() {
 			</div>
 		</ContentContainer>
 	);
-}
+};

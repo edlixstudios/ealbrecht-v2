@@ -9,7 +9,7 @@ import { cn } from "$/lib/utils";
 import { gradient } from "$/util/gradient";
 import ContentContainer from "./content-container";
 
-export default function Funnel() {
+export const Funnel = () => {
 	const t = useTranslations();
 	const { scrollTo } = useScroll();
 	return (
@@ -52,4 +52,4 @@ export default function Funnel() {
 			</div>
 		</ContentContainer>
 	);
-}
+};

@@ -5,7 +5,7 @@ import fullbody from "$/assets/images/me_body_full.png";
 import { gradient } from "$/util/gradient";
 import ContentContainer from "./content-container";
 
-export default async function About() {
+export const About = async () => {
 	const t = await getTranslations();
 
 	return (
@@ -42,4 +42,4 @@ export default async function About() {
 			/>
 		</section>
 	);
-}
+};
