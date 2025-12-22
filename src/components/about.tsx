@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { twMerge } from "tailwind-merge";
+import fullbody from "$/assets/images/me_body_full.png";
 import { gradient } from "$/util/gradient";
 import ContentContainer from "./content-container";
 
@@ -15,15 +16,18 @@ export default async function About() {
 				</h2>
 				<div className={"grid xl:grid-cols-2 gap-8 px-4 py-8 "}>
 					<Image
-						src={"/me.jpg"}
+						src={fullbody}
 						alt={"Eduard Albrecht"}
 						width={500}
 						height={500}
 						loading="lazy"
 						placeholder={"blur"}
 						blurDataURL={"/me.jpg"}
-						className={"rounded-md m-auto aspect-auto"}
+						className={
+							"rounded-md m-auto aspect-auto bg-linear-to-t from-blue-300/50 to-transparent"
+						}
 					/>
+
 					<div className="flex flex-col justify-between text-2xl gap-4 text-justify">
 						<p>{t("about.desc1")}</p>
 						<p>{t("about.desc2")}</p>

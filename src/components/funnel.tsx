@@ -1,14 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { ChevronDownIcon } from "lucide-react";
+
 import { useTranslations } from "next-intl";
 import { Button } from "$/components/ui/button";
+import { useScroll } from "$/hooks/useScroll";
 import { cn } from "$/lib/utils";
 import { gradient } from "$/util/gradient";
 import ContentContainer from "./content-container";
 
 export default function Funnel() {
 	const t = useTranslations();
+	const { scrollTo } = useScroll();
 	return (
 		<ContentContainer className="h-screen flex justify-center items-center">
 			<div id="top" className="font-bold flex flex-col xl:gap-4">
@@ -37,8 +40,13 @@ export default function Funnel() {
 					animate={{ opacity: 1 }}
 					className="mt-4 flex justify-center xl:justify-start"
 				>
-					<Button variant={"gradient"} size={"lg"} asChild>
-						<Link href={"#about"}>{t("funnel.button")}</Link>
+					<Button
+						variant={"default"}
+						size={"lg"}
+						onClick={() => scrollTo("about")}
+					>
+						{t("funnel.button")}{" "}
+						<ChevronDownIcon className={"animate-bounce"} />
 					</Button>
 				</motion.div>
 			</div>

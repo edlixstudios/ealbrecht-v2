@@ -1,24 +1,31 @@
+"use client";
+
 import { ArrowUpToLine } from "lucide-react";
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import { FaGithubSquare, FaLinkedin, FaXingSquare } from "react-icons/fa";
+import { useScroll } from "$/hooks/useScroll";
 import ContentContainer from "./content-container";
+import { Button } from "./ui/button";
 
-export default async function Footer() {
-	const t = await getTranslations();
+export const Footer = () => {
+	const t = useTranslations();
+	const { scrollToTop } = useScroll();
 
 	return (
 		<footer className="bg-slate-900 text-white">
 			<ContentContainer>
 				<div className="flex justify-center">
-					<Link
-						href={"#top"}
+					<Button
+						variant={"ghost"}
+						onClick={scrollToTop}
+						size={"icon"}
 						className={
-							"w-14 h-14 xl:h-24 xl:w-24 rounded-md transition-all hover:bg-slate-800 hover:scale-110"
+							"size-16 xl:size-24 rounded-md transition-all  hover:scale-110"
 						}
 					>
-						<ArrowUpToLine className={"w-full h-full"} />
-					</Link>
+						<ArrowUpToLine className={"size-full"} />
+					</Button>
 				</div>
 				<div className="mt-4 xl:mt-8">
 					<p className="text-center text-3xl">{t("footer.title")}</p>
@@ -60,4 +67,4 @@ export default async function Footer() {
 			</ContentContainer>
 		</footer>
 	);
-}
+};

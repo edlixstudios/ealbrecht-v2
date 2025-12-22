@@ -1,4 +1,3 @@
-import Footer from "$/components/footer";
 import Header from "$/components/header";
 import "../globals.css";
 import type { Metadata } from "next";
@@ -6,6 +5,7 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
+import { Footer } from "$/components/footer";
 import { Toaster } from "$/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });

@@ -3,7 +3,6 @@
 import DE from "country-flag-icons/react/3x2/DE";
 import US from "country-flag-icons/react/3x2/US";
 import { useParams } from "next/dist/client/components/navigation";
-import { useTranslations } from "next-intl";
 import { redirect } from "$/i18n/navigation";
 import {
 	Select,
@@ -15,24 +14,38 @@ import {
 
 export const LocaleSwitcher = () => {
 	const { locale } = useParams<{ locale: string }>();
-	const t = useTranslations();
 
-	async function handleLanguageChange(value: string) {
+	function handleLanguageChange(value: string | null) {
+		if (!value) return;
+
 		redirect({ href: "/", locale: value });
 	}
 
 	return (
 		<Select defaultValue={locale} onValueChange={handleLanguageChange}>
-			<SelectTrigger className="w-20">
-				<SelectValue placeholder={t("pickLang")} />
+			<SelectTrigger>
+				<SelectValue>
+					{locale === "de" ? (
+						<span className="flex items-center gap-2">
+							<DE />
+							Deutsch
+						</span>
+					) : (
+						<span className="flex items-center gap-2">
+							<US />
+							English
+						</span>
+					)}
+				</SelectValue>
 			</SelectTrigger>
 			<SelectContent>
 				<SelectItem value="de" className="flex">
-					{/* Deutsch */}
-					<DE className="w-7" />
+					<DE />
+					Deutsch
 				</SelectItem>
-				<SelectItem value="en">
-					<US className="w-7" />
+				<SelectItem value="en" className={"flex items-center"}>
+					<US />
+					English
 				</SelectItem>
 			</SelectContent>
 		</Select>

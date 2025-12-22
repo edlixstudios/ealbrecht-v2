@@ -1,13 +1,10 @@
 import { Amatic_SC } from "next/font/google";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
 import { LocaleSwitcher } from "./locale-switcher";
 
 const amatic = Amatic_SC({ subsets: ["latin"], weight: "700" });
 
 export default async function Header() {
-	const t = await getTranslations();
-
 	return (
 		<header className="w-full py-4 px-[10vw] flex flex-col items-center justify-center absolute top-0 xl:flex-row xl:justify-between">
 			<div className="flex items-center gap-2">
