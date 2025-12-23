@@ -1,5 +1,6 @@
 import {
 	FaAngular,
+	FaAws,
 	FaConfluence,
 	FaFlask,
 	FaGit,
@@ -27,6 +28,7 @@ import {
 	SiVitest,
 } from "react-icons/si";
 import { TbBrandCSharp, TbBrandThreejs } from "react-icons/tb";
+import { VscAzure } from "react-icons/vsc";
 import type { LogoItem } from "$/components/LogoLoop";
 import type { Skilltree } from "$/components/skilltree";
 
@@ -220,6 +222,22 @@ export const unitySliderSkills: LogoItem[] = [
 	{
 		node: <FaUnity />,
 		title: "Unity",
+	},
+];
+
+export const cloudSkills: Skilltree = {
+	skillCategory: "Cloud",
+	skills: ["AWS", "Azure"],
+};
+
+export const cloudSliderSkills: LogoItem[] = [
+	{
+		node: <FaAws />,
+		title: "AWS",
+	},
+	{
+		node: <VscAzure />,
+		title: "Azure",
 	},
 ];
 

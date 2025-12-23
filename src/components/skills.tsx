@@ -1,4 +1,5 @@
 "use client";
+import lodash from "lodash";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { cn } from "$/lib/utils";
@@ -7,6 +8,8 @@ import {
 	automationSkills,
 	backendSkills,
 	backendSliderSkills,
+	cloudSkills,
+	cloudSliderSkills,
 	databaseSkills,
 	devOpsSkills,
 	devOpsSliderSkills,
@@ -24,10 +27,13 @@ import {
 	unitySliderSkills,
 } from "$/util/skillts";
 import ContentContainer from "./content-container";
-import LogoLoop from "./LogoLoop";
+
 import { Skilltree } from "./skilltree";
 
 const EncryptedText = dynamic(() => import("$/components/ui/encrypted-text"), {
+	ssr: false,
+});
+const LogoLoop = dynamic(() => import("./LogoLoop"), {
 	ssr: false,
 });
 
@@ -42,6 +48,7 @@ export const Skills = () => {
 		devOpsSkills,
 		projectManagementSkills,
 		testingSkills,
+		cloudSkills,
 		unitySkills,
 		automationSkills,
 		languagesSkills,
@@ -68,15 +75,16 @@ export const Skills = () => {
 				))}
 			</div>{" "}
 			<LogoLoop
-				logos={[
+				logos={lodash.shuffle([
 					...frontendSliderSkills,
 					...backendSliderSkills,
 					...unitySliderSkills,
+					...cloudSliderSkills,
 					...projectManagementSliderSkills,
 					...devOpsSliderSkills,
 					...programmingLanguagesSliderSkill,
 					...testingSliderSkills,
-				]}
+				])}
 				speed={120}
 				direction="left"
 				logoHeight={48}
