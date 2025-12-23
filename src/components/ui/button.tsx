@@ -21,7 +21,7 @@ const buttonVariants = cva(
 				link: "text-primary underline-offset-4 hover:underline",
 				gradient: cn(
 					gradient,
-					"w-50 p-8 text-base transition-all text-white hover:scale-110",
+					"text-base transition-all text-white p-6 md:w-50 md:p-8 hover:scale-110",
 				),
 			},
 			size: {

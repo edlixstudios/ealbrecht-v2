@@ -30,7 +30,7 @@ export const About = () => {
 						}
 					/>
 
-					<div className="flex flex-col justify-between text-2xl gap-4 text-justify">
+					<div className="flex flex-col justify-between gap-4 text-justify md:text-2xl">
 						<p>{t("about.desc1")}</p>
 						<p>{t("about.desc2")}</p>
 						<p>{t("about.desc3")}</p>

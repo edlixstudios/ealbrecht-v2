@@ -29,7 +29,8 @@ export default async function RootLayout({
 	const { locale } = await params;
 
 	return (
-		<html lang={locale}>
+		// biome-ignore lint/a11y/useHtmlLang: <not needed>
+		<html suppressHydrationWarning>
 			<head>
 				<title></title>
 				<link rel="icon" href="./icon.png" />

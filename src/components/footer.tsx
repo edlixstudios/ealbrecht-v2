@@ -10,7 +10,7 @@ import ContentContainer from "./content-container";
 import { Button } from "./ui/button";
 
 export const Footer = () => {
-	const t = useTranslations();
+	const t = useTranslations("footer");
 	const { scrollToTop } = useScroll();
 
 	return (
@@ -29,7 +29,7 @@ export const Footer = () => {
 					</Button>
 				</div>
 				<div className="mt-4 xl:mt-8">
-					<p className="text-center text-3xl">{t("footer.title")}</p>
+					<p className="text-center text-3xl">{t("title")}</p>
 					<div className="flex my-2 justify-center gap-2">
 						<Link
 							className={
@@ -67,7 +67,7 @@ export const Footer = () => {
 					<div className="mt-4">
 						<hr className="xl:w-1/3 mx-auto h-1" />
 						<p className="text-center">
-							{t("footer.createdBy", { date: new Date().getFullYear() })}
+							{t("createdBy", { date: new Date().getFullYear() })}
 						</p>
 					</div>
 				</div>
